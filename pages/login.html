@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SendIt</title>
     <link rel="stylesheet" href="../stylesheets/app.css" />
+    <link rel="stylesheet" href="../stylesheets/form.css" />
   </head>
   <body>
     <header>
@@ -13,11 +14,24 @@
           <li><a href="./index.html"> SendIt</a></li>
         </ul>
         <ul>
-          <li><a href="/register.html"> Sign Up</a></li>
-          <li><a href="./login.html">Login</a></li>
-          <li><a href="./logout.html">Logout</a></li>
+          <li><a class="auth" href="./signup.html"> Sign Up</a></li>
+          <li><a class="auth" href="./login.html">Login</a></li>
+          <li id="logout"><a href="./logout.html">Logout</a></li>
         </ul>
       </nav>
     </header>
+    <main>
+      <div class="form">
+        <h1>Log in</h1>
+        <form>
+          <label for="email">Email</label>
+          <input type="text" id="last_name" placeholder="Email address" />
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter password" />
+          <button>Submit</button>
+        </form>
+      </div>
+    </main>
+    <script src="../scripts/logout.js"></script>
   </body>
 </html>

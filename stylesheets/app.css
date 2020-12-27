@@ -3,6 +3,8 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: "Raleway", arial;
+  background: #222;
+  color: #fff;
 }
 
 a {
