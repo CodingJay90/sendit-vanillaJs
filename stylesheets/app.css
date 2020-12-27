@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", arial;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+p {
+  font-family: "Montserrat", arial;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  background: rgb(37, 6, 151);
+  background: rgb(19, 18, 18);
+  color: white;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+nav li {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 1rem;
+}
+
+nav li:hover {
+  /* border: 1px solid grey; */
+  background: rgba(180, 178, 178, 0.226);
+  cursor: pointer;
+  transition: ease 400ms;
+  border-radius: 3px;
+}
+
+/* JUMBOTRON */
+.jumbotron {
+  height: 90vh;
+  background: url(../images/showcase_2.jpg);
+  background-size: contain;
+  color: white;
+}
+
+.landing-inner {
+  background: rgba(0, 0, 0, 0.808);
+  height: 90vh;
+}
+
+.landing-inner h1 {
+  text-align: center;
+  padding: 2rem;
+  font-weight: 600;
+  font-family: "Sansita Swashed", arial;
+  margin-top: 0;
+  font-size: 3em;
+  font-weight: 300;
+  letter-spacing: 10px;
+}
+
+.landing-inner h2,
+h5 {
+  padding: 1rem 3rem;
+  font-size: 25px;
+  font-weight: 100;
+}
+
+/* UTILITIES CLASSES */
+.btn {
+  border: none;
+  border-radius: 5px;
+  padding: 1rem 0.8rem;
+  cursor: pointer;
+}
+
+.btn-default {
+  /* display: block; */
+  margin: auto;
+  position: relative;
+  right: 48%;
+  left: 40%;
+  text-align: center;
+  background: linear-gradient(
+    to right,
+    rgb(2, 160, 2),
+    rgb(37, 146, 37),
+    rgb(40, 122, 7)
+  );
+}
+
+.btn:hover {
+  filter: brightness(130%);
+}
+
+@media screen and (max-width: 995px) {
+  .jumbotron {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+  }
+
+  .landing-inner {
+    background: rgba(0, 0, 0, 0.808);
+    height: 80vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .jumbotron {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+  }
+
+  .landing-inner {
+    background: rgba(0, 0, 0, 0.808);
+    height: 90vh;
+  }
+
+  .landing-inner h5 {
+    font-size: 18px;
+  }
+}
