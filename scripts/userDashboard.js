@@ -20,7 +20,7 @@ const loadContent = () => {
             <p>Destination: <span id="destination">${item.destination}</span></p>
             <p>Status: <span id="status">${item.status}</span></p>
             <p>Parcel Id: <span id="id">${item.id}</span></p>
-            <a href="../pages/editPickupDestination.html?/${item.id}">Edit</a>
+            <a href="../pages/editPickupDestination.html?/${item.id}" >Edit</a>
         </div>
         `;
       });
