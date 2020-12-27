@@ -19,12 +19,22 @@ const registerUser = (e) => {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("currentUserId", data.userId);
       if (data.success) {
         window.location.href = "../pages/userDashboard.html";
+        localStorage.setItem("currentUserId", data.userId);
+        localStorage.setItem("token", data.token);
       } else {
-        alert("there is an error");
+        data.errors.map((error) => {
+          const myToast = Toastify({
+            text: error.msg,
+            duration: 5000,
+            backgroundColor: "linear-gradient(135deg, #73a5ff, #5477f5)",
+            close: true,
+            position: "left",
+            stopOnFocus: true,
+          });
+          myToast.showToast();
+        });
       }
     })
     .catch((err) => {

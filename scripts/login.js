@@ -16,10 +16,20 @@ const loginUser = (e) => {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("currentUserId", data.userId);
       if (data.success) {
+        localStorage.setItem("currentUserId", data.userId);
+        localStorage.setItem("token", data.token);
         window.location.href = "../pages/userDashboard.html";
+      } else {
+        const myToast = Toastify({
+          text: data.message ? data.message : data,
+          duration: 5000,
+          backgroundColor: "linear-gradient(135deg, #73a5ff, #5477f5)",
+          close: true,
+          position: "left",
+          stopOnFocus: true,
+        });
+        myToast.showToast();
       }
     })
     .catch((err) => {

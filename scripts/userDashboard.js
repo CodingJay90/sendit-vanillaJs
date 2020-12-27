@@ -4,8 +4,18 @@ const orderWrapper = document.querySelector(".orders");
 
 const loadContent = () => {
   if (!token) {
-    alert("You are authenticated, you nned to be logged to view orders");
-    window.location.href = "../pages/login.html";
+    const myToast = Toastify({
+      text: "You are unauthenticated, you need to be logged in to view orders",
+      duration: 2500,
+      backgroundColor: "linear-gradient(135deg, #73a5ff, #5477f5)",
+      close: true,
+      position: "left",
+      stopOnFocus: true,
+    });
+    myToast.showToast();
+    setTimeout(() => {
+      window.location.href = "../pages/login.html";
+    }, 2501);
   }
   fetch(`http://localhost:5000/parcels/${userId}`, {
     headers: {
