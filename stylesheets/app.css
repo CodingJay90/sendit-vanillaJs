@@ -16,6 +16,10 @@ p {
   font-family: "Montserrat", arial;
 }
 
+.none {
+  display: none;
+}
+
 /* NAV */
 nav {
   display: flex;
