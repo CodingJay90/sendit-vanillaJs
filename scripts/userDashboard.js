@@ -3,6 +3,10 @@ const token = localStorage.getItem("token");
 const orderWrapper = document.querySelector(".orders");
 
 const loadContent = () => {
+  if (!token) {
+    alert("You are authenticated, you nned to be logged to view orders");
+    window.location.href = "../pages/login.html";
+  }
   fetch(`http://localhost:5000/parcels/${userId}`, {
     headers: {
       "x-access-token": token,
@@ -18,14 +22,16 @@ const loadContent = () => {
             <p>Recipient Mobile No: <span id="phone_no">${item.recipient_phone_no}</span></p>
             <p>Pickup Location: <span id="location">${item.pickup_location}</span></p>
             <p>Destination: <span id="destination">${item.destination}</span></p>
-            <p>Status: <span id="status">${item.status}</span><button id="cancel-btn" data-status=${item.status} onclick='cancelOrder(${item.id})'>Cancel order</button></p>
+            <p>Status: <span id="status">${item.status}</span></p>
             <p>Parcel Id: <span id="id">${item.id}</span></p>
-            <a href="../pages/editPickupDestination.html?/${item.id}" >Edit</a>
+            <div>
+                <a href="../pages/editPickupDestination.html?/${item.id}" >Edit</a>
+                <button class="btn" id="cancel-btn" data-status=${item.status} onclick='cancelOrder(${item.id})'>Cancel order</button>
+            </div>
         </div>
         `;
       });
       document.querySelectorAll("#cancel-btn").forEach((i) => {
-        console.log(i.dataset.status);
         if (i.dataset.status === "cancelled") {
           i.classList.add("none");
         }

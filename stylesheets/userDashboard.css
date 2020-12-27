@@ -3,19 +3,119 @@
   margin: auto;
 }
 
+.orders-layer {
+  background: url(../images/photo-1585047668151-b281b0c89c97.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .orders {
   display: grid;
-  column-gap: 20px;
-  grid-template-columns: repeat(2, 1fr);
+  column-gap: 15px;
+  grid-gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
   padding: 1rem;
-  background-color: #444;
+  background: rgba(0, 0, 0, 0.651);
+  box-shadow: inset 0 0 75px 75px rgba(0, 0, 0, 0.959);
+}
+
+.orders p {
+  letter-spacing: 1px;
+  font-size: 18px;
+  font-weight: 100;
+  position: relative;
+}
+
+.orders div #cancel-btn {
+  /* position: absolute;
+  right: 3%; */
+  border: none;
+  padding: 0.5rem;
+  border-radius: 3px;
+  color: #eee;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+
+.order-item div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order-item div a {
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #1cb5e0;
+}
+
+.order-item div a:hover {
+  text-decoration: underline;
 }
 
 .orders > div {
-  border: 1px solid green;
   flex: auto;
+  border: 1px solid rgb(91, 117, 91);
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.orders p span {
+  color: #a3e9a3;
+  font-size: 15px;
 }
 
 .details {
   margin: 2rem;
+}
+
+.hero {
+  display: flex;
+  margin: 2rem auto;
+  justify-content: space-between;
+  position: relative;
+}
+
+.hero h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.container h2 {
+  font-size: 28px;
+  font-weight: 400;
+  margin-left: 2rem;
+  width: 38%;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid red;
+}
+
+.hero a {
+  margin: 4rem 0;
+  background: linear-gradient(to right, #000046, #1cb5e0);
+  background: linear-gradient(to right, #fe8c00, #f83600);
+  width: 40%;
+  display: block;
+  text-align: center;
+  position: absolute;
+  top: -20%;
+  left: 50%;
+}
+
+@media screen and (max-width: 926px) {
+  .orders {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 584px) {
+  .orders {
+    grid-template-columns: 1fr;
+  }
+  .hero {
+    display: block;
+  }
+  .hero a {
+    position: static;
+    margin-left: 2rem;
+  }
 }
