@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SendIt</title>
     <link rel="stylesheet" href="../stylesheets/app.css" />
-    <link rel="stylesheet" href="../stylesheets/userDashboard.css" />
+    <link rel="stylesheet" href="../stylesheets/form.css" />
   </head>
   <body>
     <header>
@@ -22,19 +22,16 @@
       </nav>
     </header>
     <main>
-      <div class="container">
-        <div>
-          <h1>Dashboard</h1>
-          <a href="./createOrder.html" class="btn">Create Order</a>
-        </div>
-
-        <div class="details">
-          <div>info</div>
-        </div>
-        <div class="orders"></div>
+      <div class="form">
+        <h1>Edit pickup Destination</h1>
+        <form>
+          <label for="pickup_destination">Pickup Destination</label>
+          <input type="text" name="pickup_destination" />
+          <button>Submit</button>
+        </form>
       </div>
     </main>
     <script src="../scripts/logout.js"></script>
-    <script src="../scripts//userDashboard.js"></script>
+    <script src="../scripts/editPickupDestination.js"></script>
   </body>
 </html>

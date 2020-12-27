@@ -1,0 +1,21 @@
+.container {
+  width: 85%;
+  margin: auto;
+}
+
+.orders {
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 1rem;
+  background-color: #444;
+}
+
+.orders > div {
+  border: 1px solid green;
+  flex: auto;
+}
+
+.details {
+  margin: 2rem;
+}

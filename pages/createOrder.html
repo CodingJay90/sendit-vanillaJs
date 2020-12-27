@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SendIt</title>
+    <link rel="stylesheet" href="../stylesheets/app.css" />
+    <link rel="stylesheet" href="../stylesheets/form.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="./index.html"> SendIt</a></li>
+        </ul>
+        <ul>
+          <li><a class="user" href="#"></a></li>
+          <li><a class="auth" href="./signup.html"> Sign Up</a></li>
+          <li><a class="auth" href="./login.html">Login</a></li>
+          <li id="logout"><a href="#">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="form">
+        <h1>Create Order</h1>
+        <form>
+          <label for="pickup_location">Pickup Location</label>
+          <input
+            type="text"
+            name="pickup_location"
+            placeholder="Enter pickup location"
+          />
+          <label for="destination">Destination</label>
+          <input
+            type="text"
+            name="destination"
+            placeholder="enter destination"
+          />
+          <label for="recipient_name">Recipient Name</label>
+          <input
+            type="text"
+            name="recipient_name"
+            placeholder="Email recipient name"
+          />
+          <label for="recipient_phone_no">Recipient Mobile no</label>
+          <input
+            type="text"
+            name="recipient_phone_no"
+            placeholder="Recipient Mobile number"
+          />
+          <button>Submit</button>
+        </form>
+      </div>
+    </main>
+    <script src="../scripts/logout.js"></script>
+    <script src="../scripts/createOrder.js"></script>
+  </body>
+</html>

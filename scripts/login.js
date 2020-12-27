@@ -17,6 +17,7 @@ const loginUser = (e) => {
     .then((data) => {
       console.log(data);
       localStorage.setItem("token", data.token);
+      localStorage.setItem("currentUserId", data.userId);
       if (data.success) {
         window.location.href = "../pages/userDashboard.html";
       }

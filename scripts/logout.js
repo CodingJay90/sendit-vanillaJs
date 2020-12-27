@@ -1,10 +1,10 @@
 const authBtn = document.querySelectorAll(".auth");
 const logoutBtn = document.querySelector("#logout");
-const token = localStorage.getItem("token");
+const authToken = localStorage.getItem("token");
 const user = document.querySelector(".user");
 
 window.addEventListener("load", () => {
-  if (token) {
+  if (authToken) {
     authBtn.forEach((i) => {
       i.parentElement.classList.add("none");
     });
@@ -16,7 +16,7 @@ window.addEventListener("load", () => {
     method: "GET",
     headers: {
       "Content-type": "Apllication/json",
-      "x-access-token": token,
+      "x-access-token": authToken,
     },
   })
     .then((res) => res.json())
