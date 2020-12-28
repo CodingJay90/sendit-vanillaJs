@@ -113,7 +113,8 @@ function initMap() {
     },
     (response, status) => {
       if (status !== "OK") {
-        alert("Error was: " + status);
+        // alert("Error was: " + status);
+        console.log(status);
       } else {
         const originList = response.originAddresses;
         const destinationList = response.destinationAddresses;
