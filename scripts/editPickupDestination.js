@@ -7,17 +7,20 @@ const editDestination = (e) => {
   //grab form values
   const destination = form.destination.value;
 
-  fetch(`http://localhost:5000/parcels/${parcel_id}/destination`, {
-    method: "PUT",
-    body: JSON.stringify({
-      destination,
-      user_id: localStorage.getItem("currentUserId"),
-    }),
-    headers: {
-      "Content-type": "Application/json",
-      "x-access-token": localStorage.getItem("token"),
-    },
-  })
+  fetch(
+    `https://sendit-parcel.herokuapp.com/parcels/${parcel_id}/destination`,
+    {
+      method: "PUT",
+      body: JSON.stringify({
+        destination,
+        user_id: localStorage.getItem("currentUserId"),
+      }),
+      headers: {
+        "Content-type": "Application/json",
+        "x-access-token": localStorage.getItem("token"),
+      },
+    }
+  )
     .then((res) => res.json())
     .then((data) => {
       console.log(data);

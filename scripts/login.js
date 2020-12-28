@@ -6,7 +6,7 @@ const loginUser = (e) => {
   const email = form.email.value;
   const password = form.password.value;
 
-  fetch("http://localhost:5000/auth/login", {
+  fetch("https://sendit-parcel.herokuapp.com/auth/login", {
     method: "POST",
     body: JSON.stringify({ email, password }),
     headers: {

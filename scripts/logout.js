@@ -12,7 +12,7 @@ window.addEventListener("load", () => {
     logoutBtn.classList.add("none");
     user.classList.add("none");
   }
-  fetch("http://localhost:5000/auth/user", {
+  fetch("https://sendit-parcel.herokuapp.com/auth/user", {
     method: "GET",
     headers: {
       "Content-type": "Apllication/json",

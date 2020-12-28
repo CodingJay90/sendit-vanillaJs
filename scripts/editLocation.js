@@ -7,7 +7,7 @@ const editDestination = (e) => {
   //grab form values
   const destination = form.destination.value;
 
-  fetch(`http://localhost:5000/parcels/${parcel_id}/location`, {
+  fetch(`https://sendit-parcel.herokuapp.com/parcels/${parcel_id}/location`, {
     method: "PUT",
     body: JSON.stringify({
       destination,

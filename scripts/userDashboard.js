@@ -17,7 +17,7 @@ const loadContent = () => {
       window.location.href = "../pages/login.html";
     }, 2501);
   }
-  fetch(`http://localhost:5000/parcels/${userId}`, {
+  fetch(`https://sendit-parcel.herokuapp.com/parcels/${userId}`, {
     headers: {
       "x-access-token": token,
     },
@@ -56,7 +56,7 @@ const loadContent = () => {
 window.addEventListener("load", loadContent);
 
 const cancelOrder = (id) => {
-  fetch(`http://localhost:5000/parcels/${id}/cancel`, {
+  fetch(`https://sendit-parcel.herokuapp.com/parcels/${id}/cancel`, {
     method: "PUT",
     body: JSON.stringify({ user_id: localStorage.getItem("currentUserId") }),
     headers: {

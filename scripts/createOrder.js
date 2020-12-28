@@ -9,7 +9,7 @@ const loginUser = (e) => {
   const destination = form.destination.value;
   const pickup_location = form.pickup_location.value;
 
-  fetch("http://localhost:5000/parcels", {
+  fetch("https://sendit-parcel.herokuapp.com/parcels", {
     method: "POST",
     body: JSON.stringify({
       user_id,

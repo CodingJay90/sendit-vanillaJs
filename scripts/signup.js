@@ -9,7 +9,7 @@ const registerUser = (e) => {
   const phone_no = form.phone_no.value;
   const password = form.email.value;
 
-  fetch("http://localhost:5000/auth/register", {
+  fetch("https://sendit-parcel.herokuapp.com/auth/register", {
     method: "POST",
     body: JSON.stringify({ first_name, last_name, email, phone_no, password }),
     headers: {
