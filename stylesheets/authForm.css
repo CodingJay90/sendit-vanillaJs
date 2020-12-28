@@ -1,13 +1,46 @@
+.layer {
+  width: 65%;
+  margin: auto;
+  background: url(../images/689-6891743_delivery-man-delivery-boy-images-hd-hd-png.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 form {
   padding: 3rem;
-  width: 50%;
+  width: 100%;
   margin: 1.5rem auto;
   box-shadow: 0 0 10px #888;
   border-radius: 5px;
   color: #fff;
-  background: #fff;
+  background: rgba(0, 0, 0, 0.774);
+}
+
+.layer form input {
+  background: rgba(187, 187, 187, 0);
+  width: 50%;
+  margin: 1rem auto;
+  transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 10px;
+}
+
+.layer form input:focus {
+  width: 70%;
+  outline-color: rgba(209, 209, 209, 0.747);
+  border: none;
+  color: #fff;
 }
 
 label {
-  color: #111;
+  color: #fff;
+}
+
+.layer form button {
+  width: 50%;
+  transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.layer form button:hover {
+  width: 70%;
 }

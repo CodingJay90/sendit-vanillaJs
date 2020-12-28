@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="../stylesheets/app.css" />
     <link rel="stylesheet" href="../stylesheets/userDashboard.css" />
     <link rel="stylesheet" href="../src/toastify.css" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWZ4KOq4DYUxLQnKOeqRJuBFBSOpiTOWM&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
   </head>
   <body>
     <header>
@@ -38,6 +43,24 @@
         </div>
       </div>
     </main>
+    <section>
+      <div id="right-panel">
+        <div id="inputs">
+          <pre>
+var origin1 = {lat: 55.930, lng: -3.118};
+var origin2 = 'Greenwich, England';
+var destinationA = 'Stockholm, Sweden';
+var destinationB = {lat: 50.087, lng: 14.421};
+        </pre
+          >
+        </div>
+        <div>
+          <strong>Results</strong>
+        </div>
+        <div id="output"></div>
+      </div>
+      <div id="map"></div>
+    </section>
     <script src="../scripts/logout.js"></script>
     <script src="../scripts//userDashboard.js"></script>
     <script src="../src/toastify.js"></script>

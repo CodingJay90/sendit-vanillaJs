@@ -72,12 +72,28 @@ nav ul:nth-of-type(1) li a {
   color: white;
 }
 
-.landing-inner {
-  background: rgba(0, 0, 0, 0.808);
-  height: 90vh;
+.jumbotron2 {
+  background: url(../images/photo-1526367790999-0150786686a2.jpg);
 }
 
-.landing-inner h1 {
+.jumbotron3 {
+  background: url(../images/delivery_man.png);
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  background-size: cover;
+}
+
+.landing-inner,
+.landing-inner2,
+.landing-inner3 {
+  background: rgba(0, 0, 0, 0.808);
+  height: 90vh;
+  overflow-x: hidden;
+}
+
+.landing-inner h1,
+.landing-inner2 h1,
+.landing-inner3 h1 {
   text-align: center;
   padding: 2rem;
   font-weight: 600;
@@ -89,6 +105,10 @@ nav ul:nth-of-type(1) li a {
 }
 
 .landing-inner h2,
+h5,
+.landing-inner2 h2,
+h5,
+.landing-inner3 h2,
 h5 {
   padding: 1rem 3rem;
   font-size: 25px;
@@ -152,4 +172,33 @@ h5 {
   .landing-inner h5 {
     font-size: 18px;
   }
+}
+
+.arrow {
+  cursor: pointer;
+  position: absolute;
+  top: 55%;
+  margin-top: -50px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  opacity: 0.7;
+}
+
+.arrow:hover {
+  filter: brightness(250%);
+}
+
+#arrow-left {
+  border-width: 30px 40px 30px 0;
+  border-color: transparent rgba(73, 73, 73, 0.63) transparent transparent;
+  left: 0;
+  margin-left: 30px;
+}
+
+#arrow-right {
+  border-width: 30px 0 30px 40px;
+  border-color: transparent transparent transparent rgba(73, 73, 73, 0.63);
+  right: 0;
+  margin-right: 30px;
 }
