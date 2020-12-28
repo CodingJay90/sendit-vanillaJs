@@ -25,8 +25,11 @@ const loadContent = () => {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-      data.map((item, index) => {
-        orderWrapper.innerHTML += `
+      if (data.msg === "You do not have any parcel order yet") {
+        orderWrapper.innerHTML = data.msg + ", start by creating order";
+      } else {
+        data.map((item, index) => {
+          orderWrapper.innerHTML += `
         <div class="order-item">
             <p>Recipient name: <span id="name">${item.recipient_name}</span></p>
             <p>Recipient Mobile No: <span id="phone_no">${item.recipient_phone_no}</span></p>
@@ -40,7 +43,9 @@ const loadContent = () => {
             </div>
         </div>
         `;
-      });
+        });
+      }
+
       document.querySelectorAll("#cancel-btn").forEach((i) => {
         if (i.dataset.status === "cancelled") {
           i.classList.add("none");
@@ -63,7 +68,16 @@ const cancelOrder = (id) => {
     .then((data) => {
       console.log(data);
       if (data.success) {
-        window.location.reload();
+        const myToast = Toastify({
+          text: data.msg,
+          duration: 2500,
+          backgroundColor: "linear-gradient(135deg, #73a5ff, #5477f5)",
+          close: true,
+          position: "left",
+          stopOnFocus: true,
+        });
+        myToast.showToast();
+        setTimeout(() => window.location.reload(), 2501);
       }
     })
     .catch((err) => console.log(err));

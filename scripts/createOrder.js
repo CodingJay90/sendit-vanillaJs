@@ -27,8 +27,31 @@ const loginUser = (e) => {
     .then((data) => {
       console.log(data);
       if (data.success) {
-        window.location.href = "../pages/userDashboard.html";
-        alert(data.msg);
+        const myToast = Toastify({
+          text: data.msg,
+          duration: 3000,
+          backgroundColor: "linear-gradient(135deg, #73a5ff, #5477f5)",
+          close: true,
+          position: "left",
+          stopOnFocus: true,
+        });
+        myToast.showToast();
+        setTimeout(
+          () => (window.location.href = "../pages/userDashboard.html"),
+          3001
+        );
+      } else {
+        data.errors.map((err) => {
+          const myToast = Toastify({
+            text: err.msg,
+            duration: 4000,
+            backgroundColor: "linear-gradient(135deg, #73a5ff, #5477f5)",
+            close: true,
+            position: "left",
+            stopOnFocus: true,
+          });
+          myToast.showToast();
+        });
       }
     })
     .catch((err) => {

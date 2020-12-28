@@ -29,7 +29,16 @@ window.addEventListener("load", () => {
 });
 
 logoutBtn.addEventListener("click", () => {
-  alert("logging you out");
+  const myToast = Toastify({
+    text: "Loging You out",
+    duration: 2500,
+    backgroundColor: "linear-gradient(135deg, #73a5ff, #5477f5)",
+    close: true,
+    position: "left",
+    stopOnFocus: true,
+  });
+  myToast.showToast();
   localStorage.removeItem("token");
-  window.location.href = "../pages/index.html";
+  localStorage.removeItem("currentUserId");
+  setTimeout(() => (window.location.href = "../pages/index.html"), 2501);
 });
