@@ -35,7 +35,7 @@ const editDestination = (e) => {
         });
         myToast.showToast();
         setTimeout(
-          () => (window.location.href = "../pages/userDashboard.html"),
+          () => (window.location.href = "../userDashboard.html"),
           3001
         );
       }

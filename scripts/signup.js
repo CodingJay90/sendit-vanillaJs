@@ -20,7 +20,7 @@ const registerUser = (e) => {
     .then((data) => {
       console.log(data);
       if (data.success) {
-        window.location.href = "../pages/userDashboard.html";
+        window.location.href = "../userDashboard.html";
         localStorage.setItem("currentUserId", data.userId);
         localStorage.setItem("token", data.token);
       } else {

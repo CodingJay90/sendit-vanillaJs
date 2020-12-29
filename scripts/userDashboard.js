@@ -14,7 +14,7 @@ const loadContent = () => {
     });
     myToast.showToast();
     setTimeout(() => {
-      window.location.href = "../pages/login.html";
+      window.location.href = "../login.html";
     }, 2501);
   }
   fetch(`https://sendit-parcel.herokuapp.com/parcels/${userId}`, {
@@ -38,7 +38,7 @@ const loadContent = () => {
             <p>Status: <span id="status">${item.status}</span></p>
             <p>Parcel Id: <span id="id">${item.id}</span></p>
             <div>
-                <a href="../pages/editPickupDestination.html?/${item.id}" >Edit</a>
+                <a href="./editPickupDestination.html?/${item.id}" >Edit</a>
                 <button class="btn" id="cancel-btn" data-status=${item.status} onclick='cancelOrder(${item.id})'>Cancel order</button>
             </div>
         </div>

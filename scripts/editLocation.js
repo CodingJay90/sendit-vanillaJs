@@ -22,7 +22,7 @@ const editDestination = (e) => {
     .then((data) => {
       console.log(data);
       if (data.success) {
-        window.location.href = "../pages/userDashboard.html";
+        window.location.href = "../userDashboard.html";
         alert(data.msg);
       }
     })

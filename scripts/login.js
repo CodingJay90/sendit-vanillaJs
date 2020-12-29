@@ -19,7 +19,7 @@ const loginUser = (e) => {
       if (data.success) {
         localStorage.setItem("currentUserId", data.userId);
         localStorage.setItem("token", data.token);
-        window.location.href = "../pages/userDashboard.html";
+        window.location.href = "../userDashboard.html";
       } else {
         const myToast = Toastify({
           text: data.message ? data.message : data,

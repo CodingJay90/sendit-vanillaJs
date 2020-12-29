@@ -40,5 +40,5 @@ logoutBtn.addEventListener("click", () => {
   myToast.showToast();
   localStorage.removeItem("token");
   localStorage.removeItem("currentUserId");
-  setTimeout(() => (window.location.href = "../pages/index.html"), 2501);
+  setTimeout(() => (window.location.href = "../index.html"), 2501);
 });
