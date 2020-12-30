@@ -37,16 +37,16 @@ const loadContent = () => {
             <p>Destination: <span id="destination">${item.destination}</span></p>
             <p>Status: <span id="status">${item.status}</span></p>
             <p>Parcel Id: <span id="id">${item.id}</span></p>
-            <div data-status=${item.status}>
-                <a href="./editPickupDestination.html?/${item.id}" class="cancel-btn" >Edit</a>
-                <button class="btn" id="cancel-btn"  onclick='cancelOrder(${item.id})'>Cancel order</button>
+            <div >
+                <a href="./editPickupDestination.html?/${item.id}" data-status=${item.status} class="cancel-btn" >Edit</a>
+                <button class="btn" id="cancel-btn" data-status=${item.status} onclick='cancelOrder(${item.id})'>Cancel order</button>
             </div>
         </div>
         `;
         });
       }
 
-      document.querySelectorAll(".order-item div").forEach((i) => {
+      document.querySelectorAll(".cansel-btn").forEach((i) => {
         if (i.dataset.status === "cancelled") {
           i.classList.add("none");
         }
