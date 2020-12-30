@@ -39,7 +39,7 @@ const loadContent = () => {
             <p>Parcel Id: <span id="id">${item.id}</span></p>
             <div >
                 <a href="./editPickupDestination.html?/${item.id}" data-status=${item.status} class="cancel-btn" >Edit</a>
-                <button class="btn" id="cancel-btn" data-status=${item.status} onclick='cancelOrder(${item.id})'>Cancel order</button>
+                <button class="btn cancel-btn" id="cancel-btn" data-status=${item.status} onclick='cancelOrder(${item.id})'>Cancel order</button>
             </div>
         </div>
         `;
