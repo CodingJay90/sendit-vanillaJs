@@ -46,7 +46,7 @@ const loadContent = () => {
         });
       }
 
-      document.querySelectorAll(".cansel-btn").forEach((i) => {
+      document.querySelectorAll(".cancel-btn").forEach((i) => {
         if (i.dataset.status === "cancelled") {
           i.classList.add("none");
         }
