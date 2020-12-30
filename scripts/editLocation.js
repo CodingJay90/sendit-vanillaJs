@@ -5,12 +5,12 @@ const form = document.querySelector("form");
 const editDestination = (e) => {
   e.preventDefault();
   //grab form values
-  const destination = form.destination.value;
+  const location = form.location.value;
 
   fetch(`https://sendit-parcel.herokuapp.com/parcels/${parcel_id}/location`, {
     method: "PUT",
     body: JSON.stringify({
-      destination,
+      location,
       user_id: localStorage.getItem("currentUserId"),
     }),
     headers: {
