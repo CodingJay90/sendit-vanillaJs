@@ -44,3 +44,11 @@ label {
 .layer form button:hover {
   width: 70%;
 }
+
+.layer p a {
+  color: #15d8f1;
+}
+
+.layer p a:hover {
+  text-decoration: underline;
+}ds

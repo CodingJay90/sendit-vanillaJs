@@ -23,6 +23,7 @@ const registerUser = (e) => {
         window.location.href = "../userDashboard.html";
         localStorage.setItem("currentUserId", data.userId);
         localStorage.setItem("token", data.token);
+        localStorage.setItem("role", "member");
       } else {
         data.errors.map((error) => {
           const myToast = Toastify({

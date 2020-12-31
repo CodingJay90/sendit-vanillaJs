@@ -1,6 +1,24 @@
 const parcel_id = window.location.search.substr(2);
+const role = localStorage.getItem("role")
 
 const form = document.querySelector("form");
+
+window.addEventListener("load", () => {
+  if(role !== "admin") {
+    const myToast = Toastify({
+      text: "You do not have access to thos route",
+      duration: 2500,
+      backgroundColor: "linear-gradient(135deg, #73a5ff, #5477f5)",
+      close: true,
+      position: "left",
+      stopOnFocus: true,
+    });
+    myToast.showToast();
+    setTimeout(() => {
+      window.location.href = "../index.html";
+    }, 2501);
+  }
+})
 
 const editDestination = (e) => {
   e.preventDefault();
