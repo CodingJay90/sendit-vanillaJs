@@ -1,8 +1,18 @@
 const userId = localStorage.getItem("currentUserId");
 const token = localStorage.getItem("token");
 const orderWrapper = document.querySelector(".orders");
+const loadingOutput = document.querySelector(".output");
 
 const loadContent = () => {
+  const spinnerDiv = document.createElement("div");
+  orderWrapper.style.padding = "0";
+  spinnerDiv.innerHTML = `
+    <div class="spinner">
+      <h4>Loading</h4>
+      <i class="fas fa-spinner App-logo-spin App-logo"></i>
+    </div>
+  `;
+  loadingOutput.append(spinnerDiv);
   if (!token) {
     const myToast = Toastify({
       text: "You are unauthenticated, you need to be logged in to view orders",
@@ -24,11 +34,12 @@ const loadContent = () => {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       if (data.msg === "You do not have any parcel order yet") {
         orderWrapper.innerHTML = data.msg + ", start by creating order";
       } else {
         data.map((item, index) => {
+          spinnerDiv.innerHTML = "";
+          orderWrapper.style.padding = "1rem";
           orderWrapper.innerHTML += `
         <div class="order-item">
             <p>Recipient name: <span id="name">${item.recipient_name}</span></p>
@@ -38,8 +49,8 @@ const loadContent = () => {
             <p>Status: <span id="status">${item.status}</span></p>
             <p>Parcel Id: <span id="id">${item.id}</span></p>
             <div >
-                <a href="./editPickupDestination.html?/${item.id}" data-status=${item.status} class="cancel-btn" >Edit</a>
-                <button class="btn cancel-btn" id="cancel-btn" data-status=${item.status} onclick='cancelOrder(${item.id})'>Cancel order</button>
+            <a href="./editPickupDestination.html?/${item.id}" data-status=${item.status} class="cancel-btn" >Edit</a>
+             <button class="btn cancel-btn" id="cancel-btn" data-status=${item.status} onclick='cancelOrder(${item.id})'>Cancel order</button>
             </div>
         </div>
         `;

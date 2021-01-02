@@ -4,7 +4,6 @@ body {
   box-sizing: border-box;
   font-family: "Raleway", arial;
   background: #222;
-  color: #fff;
   background: rgb(1, 1, 6);
   background: linear-gradient(
     90deg,
@@ -12,6 +11,9 @@ body {
     rgba(9, 9, 121, 1) 47%,
     rgba(0, 80, 96, 1) 100%
   );
+  background: linear-gradient(to right, #000000, #434343);
+  color: #fff;
+  box-sizing: border-box;
 }
 
 a {
@@ -51,17 +53,18 @@ nav li {
   padding: 1.4rem;
 }
 
-nav li:hover {
-  /* border: 1px solid grey; */
-  background: rgba(180, 178, 178, 0.226);
-  cursor: pointer;
-  transition: ease 400ms;
-  border-radius: 3px;
-}
-
 nav ul:nth-of-type(1) li a {
   color: rgb(49, 212, 49);
   font-size: 1.4em;
+}
+
+nav li a:hover,
+li:hover {
+  /* border: 1px solid grey; */
+  cursor: pointer;
+  transition: ease 400ms;
+  border-radius: 3px;
+  color: aquamarine;
 }
 
 /* JUMBOTRON */
@@ -113,6 +116,15 @@ h5 {
   padding: 1rem 3rem;
   font-size: 25px;
   font-weight: 100;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.jumbotron h1 {
+  margin-top: 5rem;
 }
 
 /* UTILITIES CLASSES */
@@ -121,14 +133,16 @@ h5 {
   border-radius: 5px;
   padding: 1rem 0.8rem;
   cursor: pointer;
+  display: block;
+  width: fit-content;
 }
 
 .btn-default {
   /* display: block; */
   margin: auto;
-  position: relative;
+  /* position: relative;
   right: 48%;
-  left: 40%;
+  left: 40%; */
   text-align: center;
   background: linear-gradient(
     to right,

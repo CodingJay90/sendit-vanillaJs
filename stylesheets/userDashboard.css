@@ -119,3 +119,31 @@
     margin-left: 2rem;
   }
 }
+
+i.fas {
+  font-size: 4em;
+}
+
+.spinner {
+  text-align: center;
+}
+
+.spinner h4 {
+  font-weight: 300;
+  font-size: 2em;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 1.5s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
