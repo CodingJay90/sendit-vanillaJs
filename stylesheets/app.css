@@ -27,6 +27,8 @@ p {
 
 .none {
   display: none;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 /* NAV */

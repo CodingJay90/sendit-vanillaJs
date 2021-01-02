@@ -59,6 +59,7 @@ const loadContent = () => {
 
       document.querySelectorAll(".cancel-btn").forEach((i) => {
         if (i.dataset.status === "cancelled") {
+          console.log(i);
           i.classList.add("none");
         }
       });
