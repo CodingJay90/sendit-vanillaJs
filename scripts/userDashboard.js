@@ -24,7 +24,7 @@ const loadContent = () => {
     });
     myToast.showToast();
     setTimeout(() => {
-      window.location.href = "../login.html";
+      window.location.href = "sendit-vanillaJs/login.html";
     }, 2501);
   }
   fetch(`https://sendit-parcel.herokuapp.com/parcels/${userId}`, {
