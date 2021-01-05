@@ -10,19 +10,19 @@ const loginUser = (e) => {
   const pickup_location = form.pickup_location.value;
 
   fetch("https://sendit-parcel.herokuapp.com/parcels", {
-    method: "POST",
-    body: JSON.stringify({
-      user_id,
-      pickup_location,
-      destination,
-      recipient_name,
-      recipient_phone_no,
-    }),
-    headers: {
-      "Content-type": "Application/json",
-      "x-access-token": localStorage.getItem("token"),
-    },
-  })
+      method: "POST",
+      body: JSON.stringify({
+        user_id,
+        pickup_location,
+        destination,
+        recipient_name,
+        recipient_phone_no,
+      }),
+      headers: {
+        "Content-type": "Application/json",
+        "x-access-token": localStorage.getItem("token"),
+      },
+    })
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
@@ -37,7 +37,7 @@ const loginUser = (e) => {
         });
         myToast.showToast();
         setTimeout(
-          () => (window.location.href = "../userDashboard.html"),
+          () => (window.location.href = "https://codingjay90.github.io/sendit-vanillaJs/userDashboard.html"),
           3001
         );
       } else {

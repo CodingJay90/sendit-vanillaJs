@@ -4,7 +4,7 @@ const role = localStorage.getItem("role")
 const form = document.querySelector("form");
 
 window.addEventListener("load", () => {
-  if(role !== "admin") {
+  if (role !== "admin") {
     const myToast = Toastify({
       text: "You do not have access to thos route",
       duration: 2500,
@@ -26,21 +26,21 @@ const editDestination = (e) => {
   const location = form.location.value;
 
   fetch(`https://sendit-parcel.herokuapp.com/parcels/${parcel_id}/location`, {
-    method: "PUT",
-    body: JSON.stringify({
-      location,
-      user_id: localStorage.getItem("currentUserId"),
-    }),
-    headers: {
-      "Content-type": "Application/json",
-      "x-access-token": localStorage.getItem("token"),
-    },
-  })
+      method: "PUT",
+      body: JSON.stringify({
+        location,
+        user_id: localStorage.getItem("currentUserId"),
+      }),
+      headers: {
+        "Content-type": "Application/json",
+        "x-access-token": localStorage.getItem("token"),
+      },
+    })
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
       if (data.success) {
-        window.location.href = "../userDashboard.html";
+        window.location.href = "https://codingjay90.github.io/sendit-vanillaJs/userDashboard.html";
         alert(data.msg);
       }
     })

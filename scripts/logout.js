@@ -40,5 +40,5 @@ logoutBtn.addEventListener("click", () => {
   myToast.showToast();
   localStorage.removeItem("token");
   localStorage.removeItem("currentUserId");
-  setTimeout(() => (window.location.href = "https://codingjay90.github.io/sendit-vanillaJs/userDashboard.html"), 2501);
+  setTimeout(() => (window.location.href = "https://codingjay90.github.io/sendit-vanillaJs/"), 2501);
 });
