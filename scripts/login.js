@@ -7,12 +7,15 @@ const loginUser = (e) => {
   const password = form.password.value;
 
   fetch("https://sendit-parcel.herokuapp.com/auth/login", {
-    method: "POST",
-    body: JSON.stringify({ email, password }),
-    headers: {
-      "Content-type": "Application/json",
-    },
-  })
+      method: "POST",
+      body: JSON.stringify({
+        email,
+        password
+      }),
+      headers: {
+        "Content-type": "Application/json",
+      },
+    })
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
@@ -20,7 +23,7 @@ const loginUser = (e) => {
         localStorage.setItem("currentUserId", data.userId);
         localStorage.setItem("token", data.token);
         localStorage.setItem("role", "member");
-        window.location.href = "../userDashboard.html";
+        window.location.href = "https://codingjay90.github.io/sendit-vanillaJs/userDashboard.html";
       } else {
         const myToast = Toastify({
           text: data.message ? data.message : data,

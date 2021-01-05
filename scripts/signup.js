@@ -10,17 +10,24 @@ const registerUser = (e) => {
   const password = form.email.value;
 
   fetch("https://sendit-parcel.herokuapp.com/auth/register", {
-    method: "POST",
-    body: JSON.stringify({ first_name, last_name, email, phone_no, password }),
-    headers: {
-      "Content-type": "Application/json",
-    },
-  })
+      method: "POST",
+      body: JSON.stringify({
+        first_name,
+        last_name,
+        email,
+        phone_no,
+        password
+      }),
+      headers: {
+        "Content-type": "Application/json",
+      },
+    })
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
       if (data.success) {
-        window.location.href = "../userDashboard.html";
+        window.location.href = "https://codingjay90.github.io/sendit-vanillaJs/userDashboard.html";
+
         localStorage.setItem("currentUserId", data.userId);
         localStorage.setItem("token", data.token);
         localStorage.setItem("role", "member");

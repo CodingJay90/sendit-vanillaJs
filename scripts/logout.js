@@ -13,12 +13,12 @@ window.addEventListener("load", () => {
     user.classList.add("none");
   }
   fetch("https://sendit-parcel.herokuapp.com/auth/user", {
-    method: "GET",
-    headers: {
-      "Content-type": "Apllication/json",
-      "x-access-token": authToken,
-    },
-  })
+      method: "GET",
+      headers: {
+        "Content-type": "Apllication/json",
+        "x-access-token": authToken,
+      },
+    })
     .then((res) => res.json())
     .then((data) => {
       user.innerHTML = data.first_name;
@@ -40,5 +40,5 @@ logoutBtn.addEventListener("click", () => {
   myToast.showToast();
   localStorage.removeItem("token");
   localStorage.removeItem("currentUserId");
-  setTimeout(() => (window.location.href = "../index.html"), 2501);
+  setTimeout(() => (window.location.href = "https://codingjay90.github.io/sendit-vanillaJs/userDashboard.html"), 2501);
 });
